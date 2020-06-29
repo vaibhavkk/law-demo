@@ -1,0 +1,47 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+table {
+  width: 80%;
+  table-layout: fixed;
+}
+.mat-column-position {
+    flex: 0 0 10%;
+}
+.mat-column-firstName {
+    flex: 0 0 10%;
+}
+.mat-column-lastName {
+    flex: 0 0 10%;
+}
+.mat-column-email {
+    flex: 0 0 10%;
+}
+.mat-column-courtno {
+    flex : 0 0 10%
+}
+
+.filler {
+   flex: 1 1 auto;
+}
+.gap {
+   margin-right: 10px;
+}
+
+
