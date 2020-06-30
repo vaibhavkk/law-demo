@@ -17,6 +17,9 @@ export class SummaryComponent implements OnInit {
 
 
   }
+ rowClicked(row: any): void {
+      console.log(row);
+    }
 
 }
 

@@ -16,6 +16,9 @@ export class TodaysappointmentComponent implements OnInit {
 
 
   }
+ rowClicked(row: any): void {
+      console.log(row);
+    }
 
 }
 

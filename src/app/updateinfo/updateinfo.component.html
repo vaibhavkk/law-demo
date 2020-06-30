@@ -7,6 +7,8 @@
 <p> Enter data to search </p> <mat-form-field>
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>
+  <button mat-button (click)="OpenDialog('Add',{})" mat-flat-button >Add Row</button>
+
 <mat-table  [dataSource]="dataSource">
 
     <ng-container matColumnDef="position">
@@ -33,14 +35,18 @@
       <mat-cell *matCellDef="let element"> {{element.courtno}}  </mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+<mat-row *matRowDef="let row; columns: displayedColumns;" (click) = "OpenDialog('Update',row)" > Update </mat-row>
+<!--
 <mat-row *matRowDef="let row; columns: displayedColumns;" (click) = "rowClicked(row)" ></mat-row>
+-->
+
   </mat-table>
 
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"> </mat-row>
 
 
 
-<mat-paginator [length]="5" [pageSize]="3" [pageSizeOptions]="[5, 10, 25]"
+<mat-paginator [length]="3" [pageSize]="3" [pageSizeOptions]="[5, 10, 25]"
 >
   </mat-paginator>
 
@@ -48,4 +54,5 @@
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>
 
+  <button mat-button (click)="OpenDialog('Add',{})" mat-flat-button >Add Row</button>
 
