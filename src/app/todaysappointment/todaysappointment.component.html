@@ -1,1 +1,46 @@
-<p>todaysappointment works!</p>
+<p>Todays Appointments </p>
+
+
+
+
+<!-- Tell this component about the datasource -->
+
+
+
+<mat-table  [dataSource]="dataSource">
+
+    <ng-container matColumnDef="position">
+      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef> Party Name 1 </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef> Party Name 2 </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.lastName}}  </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> Email of party 1 </mat-header-cell>
+   
+   <mat-cell *matCellDef="let element"> {{element.email}}  </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="courtno">
+      <mat-header-cell *matHeaderCellDef> Court Number </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.courtno}}  </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+<mat-row *matRowDef="let row; columns: displayedColumns;" (click) = "rowClicked(row)" ></mat-row>
+  </mat-table>
+
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+
+
+<mat-paginator [length]="5" [pageSize]="3" [pageSizeOptions]="[5, 10, 25]"
+>
+  </mat-paginator>
+

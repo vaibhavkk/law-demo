@@ -1,13 +1,43 @@
+<table>
+<tr> 
+<th>
+<div id = "div1"> 
+<h3>
+<mat-toolbar color = "primary">
+   <span class = "gap"><a routerLink= "/summary" routerLinkActive="active"> View Summary </a></span>
+   <span><a routerLink= "/sendmessage" routerLinkActive="active"> Send Message/ Mail </a></span>
+   <span class = "filler"></span>
+   <span><a routerLink= "/updateinfo" routerLinkActive="active"> Enter Client Data </a></span>
+   <span class = "filler"></span>
+   <span> <a routerLink= "/todaysappointment" routerLinkActive="active"> Check Todays Appointments </a></span>
+
+   <span class = "filler"></span>
+   <span> <a routerLink= "/settings" routerLinkActive="active"> Application Settings </a> </span>
+</mat-toolbar>
+</h3>
+
+</div>
+</th>
+
+</tr>
+<tr>
+
+<div>
+
 <nav> 
 <ul>
  <li> <a routerLink= "/summary" routerLinkActive="active"> View Summary </a> </li>
- <li> <a routerLink= "/sendmessage" routerLinkActive="active"> Send Message/ Mail </a> </li>
+ 
+<li> <a routerLink= "/sendmessage" routerLinkActive="active"> Send Message/ Mail </a> </li>
  <li> <a routerLink= "/updateinfo" routerLinkActive="active"> Enter Client Data </a> </li>
  <li> <a routerLink= "/todaysappointment" routerLinkActive="active"> Check Todays Appointments </a> </li>
  <li> <a routerLink= "/settings" routerLinkActive="active"> Application Settings </a> </li>
  </ul>
 </nav>
 
+</div>
+
+</table>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
@@ -16,62 +46,11 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<h3>
-<mat-toolbar color = "primary">
-   <span class = "gap">See Summary</span>
-   <span>Edit Client Details</span>
-   <span class = "filler"></span>
-   <span>Send Mail to Client</span>
-   <span class = "filler"></span>
-   <span> Today's Appointments</span>
-
-   <span class = "filler"></span>
-   <span>Settings</span>
-</mat-toolbar>
-</h3>
 
 
 
 
 
-
-
-<mat-table  [dataSource]="dataSource">
-
-    <ng-container matColumnDef="position">
-      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="firstName">
-      <mat-header-cell *matHeaderCellDef> Party Name 1 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="lastName">
-      <mat-header-cell *matHeaderCellDef> Party Name 2 </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.lastName}}  </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="email">
-      <mat-header-cell *matHeaderCellDef> Email of party 1 </mat-header-cell>
-   
-   <mat-cell *matCellDef="let element"> {{element.email}}  </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="courtno">
-      <mat-header-cell *matHeaderCellDef> Court Number </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.courtno}}  </mat-cell>
-    </ng-container>
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-<mat-row *matRowDef="let row; columns: displayedColumns;" (click) = "rowClicked(row)" ></mat-row>
-  </mat-table>
-
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-
-
-
-<mat-paginator [length]="5" [pageSize]="3" [pageSizeOptions]="[5, 10, 25]"
->
-  </mat-paginator>
 
 
 
