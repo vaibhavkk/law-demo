@@ -35,8 +35,11 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
+import { MatDialogRef } from "@angular/material/dialog";
 
 @NgModule({
+    declarations : [CourseDialogComponent],
+
     imports: [
         MatAutocompleteModule,
         MatBadgeModule,
@@ -110,7 +113,9 @@ import { MatTreeModule } from '@angular/material/tree';
         MatNativeDateModule
     ],
     providers: [     
-    ]
+    ] , 
+    entryComponents: [CourseDialogComponent]
+
 })
 export class MaterialModule {
     constructor(public matIconRegistry: MatIconRegistry) {

@@ -1,3 +1,13 @@
+<nav> 
+<ul>
+ <li> <a routerLink= "/summary" routerLinkActive="active"> View Summary </a> </li>
+ <li> <a routerLink= "/sendmessage" routerLinkActive="active"> Send Message/ Mail </a> </li>
+ <li> <a routerLink= "/updateinfo" routerLinkActive="active"> Enter Client Data </a> </li>
+ <li> <a routerLink= "/todaysappointment" routerLinkActive="active"> Check Todays Appointments </a> </li>
+ <li> <a routerLink= "/settings" routerLinkActive="active"> Application Settings </a> </li>
+ </ul>
+</nav>
+
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
@@ -19,6 +29,12 @@
    <span>Settings</span>
 </mat-toolbar>
 </h3>
+
+
+
+
+
+
 
 <mat-table  [dataSource]="dataSource">
 

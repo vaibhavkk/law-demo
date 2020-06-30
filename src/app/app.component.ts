@@ -4,18 +4,21 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {User} from "./User";
 import {ApiService} from "./app.service";
+import { Inject } from "@angular/core";
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit {
-  displayedColumns = ['position', 'firstName', 'lastName', 'email'];
+export class AppComponent implements 	AfterViewInit {
+  name : String = "";
+  displayedColumns = ['position', 'firstName', 'lastName', 'email', 'courtno'];
   dataSource = new MatTableDataSource<User>();
-
-  constructor(private apiService: ApiService){
-
+  
+  constructor(private apiService: ApiService, private route: ActivatedRoute){
+	
   }
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -37,6 +40,13 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngOnInit() {
+
+
+    this.route.queryParams.subscribe(params => {
+    this.name = params['name'];
+  });
+
+
     this.apiService.getUsers().subscribe(
       data => {
         this.dataSource.data = data;
@@ -61,4 +71,7 @@ const ELEMENT_DATA: Element[] = [
   {position: 1, firstName: 'Martin', lastName: 'Kos', email: 'martin@gmail.com', courtno : 1},
   {position: 1, firstName: 'Tom', lastName: 'Paisa', email: 'tom@gmail.com', courtno:5}
 ];
+
+
+
 
