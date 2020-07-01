@@ -14,7 +14,7 @@ import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
   styleUrls: ['./updateinfo.component.css']
 })
 export class UpdateinfoComponent implements OnInit {
- displayedColumns = ['position', 'firstName', 'lastName', 'email', 'courtno'];
+ displayedColumns = ['position', 'firstName', 'lastName', 'email', 'courtno','action'];
    dataSource = new MatTableDataSource(ELEMENT_DATA);
   local_data : any ;
   action : string; 
@@ -96,14 +96,14 @@ export interface Element {
     lastName: string;
     email: string;
     courtno : number;
-    
+    action : string;
   }
   
   const ELEMENT_DATA: Element[] = [
-    {position: 1, firstName: 'John', lastName: 'Doe', email: 'john@gmail.com',    courtno: 2},
-    {position: 1, firstName: 'Mike', lastName: 'Hussey', email: 'mike@gmail.co    m', courtno:1 },
-    {position: 1, firstName: 'Ricky', lastName: 'Hans', email: 'ricky@gmail.co    m', courtno : 4},
-    {position: 1, firstName: 'Martin', lastName: 'Kos', email: 'martin@gmail.c    om', courtno : 1},
-    {position: 1, firstName: 'Tom', lastName: 'Paisa', email: 'tom@gmail.com',     courtno:5}
+    {position: 1, firstName: 'John', lastName: 'Doe', email: 'john@gmail.com',    courtno: 2, action : 'Update'},
+    {position: 1, firstName: 'Mike', lastName: 'Hussey', email: 'mike@gmail.co    m', courtno:1 , action: 'Update'},
+    {position: 1, firstName: 'Ricky', lastName: 'Hans', email: 'ricky@gmail.co    m', courtno : 4, action: 'Update'},
+    {position: 1, firstName: 'Martin', lastName: 'Kos', email: 'martin@gmail.c    om', courtno : 1, action: 'Update'},
+    {position: 1, firstName: 'Tom', lastName: 'Paisa', email: 'tom@gmail.com',     courtno:5, action:'Update'}
   ];
 

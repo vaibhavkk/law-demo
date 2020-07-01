@@ -9,10 +9,10 @@
     </mat-form-field>
   <button mat-button (click)="OpenDialog('Add',{})" mat-flat-button >Add Row</button>
 
-<mat-table  [dataSource]="dataSource">
+<mat-table #table  [dataSource]="dataSource" >
 
     <ng-container matColumnDef="position">
-      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+      <mat-header-cell   *matHeaderCellDef> No. </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
     </ng-container>
 
@@ -34,15 +34,23 @@
       <mat-header-cell *matHeaderCellDef> Court Number </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.courtno}}  </mat-cell>
     </ng-container>
+ 
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef> Action  </mat-header-cell>
+      <mat-cell *matCellDef="let element" (click) = "OpenDialog('Update',element)"> {{element.action}}  </mat-cell>
+    </ng-container>
+
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+<!-- updates option for whole table 
 <mat-row *matRowDef="let row; columns: displayedColumns;" (click) = "OpenDialog('Update',row)" > Update </mat-row>
-<!--
-<mat-row *matRowDef="let row; columns: displayedColumns;" (click) = "rowClicked(row)" ></mat-row>
 -->
+
+<mat-row *matRowDef="let row; columns: displayedColumns;" ></mat-row>
 
   </mat-table>
 
     <mat-row *matRowDef="let row; columns: displayedColumns;"> </mat-row>
+    <mat-row [ngClass]="{'gray': index%2 == 1}" *matRowDef="let row; columns: displayedColumns;let index = index"></mat-row>
 
 
 
