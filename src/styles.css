@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+mat-sidenav {
+    width: 100px;
+    padding:2px;
+}
+.mat-drawer { 
+    background-color: #023075;
+    color:#fff
+}
+.main-content {
+    padding:20px;
+}
+.toolbar-spacer {
+    flex: 1 1 1;
+}
+
+
+

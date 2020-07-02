@@ -36,7 +36,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatDialogRef } from "@angular/material/dialog";
-
+import { MatSidenavModule } from "@angular/material/sidenav"
 @NgModule({
     declarations : [CourseDialogComponent],
 
@@ -68,6 +68,8 @@ import { MatDialogRef } from "@angular/material/dialog";
         MatSliderModule,
         MatSlideToggleModule,
         MatSnackBarModule,
+	MatSidenavModule,
+	MatToolbarModule,
         MatSortModule,
         MatTableModule,
         MatTabsModule,
@@ -105,6 +107,8 @@ import { MatDialogRef } from "@angular/material/dialog";
         MatSlideToggleModule,
         MatSnackBarModule,
         MatSortModule,
+MatSidenavModule,
+  MatToolbarModule
         MatTableModule,
         MatTabsModule,
         MatToolbarModule,

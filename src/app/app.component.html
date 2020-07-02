@@ -1,67 +1,38 @@
-<table>
-<tr> 
-<th>
-<div id = "div1"> 
-<h3>
-<mat-toolbar color = "primary">
-   <span class = "gap"><a routerLink= "/summary" routerLinkActive="active"> View Summary </a></span>
-   <span><a routerLink= "/sendmessage" routerLinkActive="active"> Send Message/ Mail </a></span>
-   <span class = "filler"></span>
-   <span><a routerLink= "/updateinfo" routerLinkActive="active"> Enter Client Data </a></span>
-   <span class = "filler"></span>
-   <span> <a routerLink= "/todaysappointment" routerLinkActive="active"> Check Todays Appointments </a></span>
 
-   <span class = "filler"></span>
-   <span> <a routerLink= "/settings" routerLinkActive="active"> Application Settings </a> </span>
-</mat-toolbar>
-</h3>
+   <mat-toolbar color="primary" position="start" >
+ <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" 
+routerLink= "/summary" routerLinkActive="active">
+        <mat-icon>Summary</mat-icon>
+      </button>
+      <button mat-icon-button (click)="sidenav.toggle()" routerLink= "/sendmessage" routerLinkActive="active">
+  Send Message/ Mail
+ </button>
+      <button mat-icon-button (click)="sidenav.toggle()" routerLink= "/updateinfo" routerLinkActive="active"> Update Data </button> 
 
-</div>
-</th>
+        <button mat-icon-button routerLink= "/todaysappointment" routerLinkActive="active">  Check Todays Appointments </button>
+<button mat-icon-button routerLink= "/settings" routerLinkActive="active">  Settings </button>
+</mat-toolbar-row>
+    </mat-toolbar>
+<mat-sidenav-container>
+<mat-sidenav  #sidenav>
 
-</tr>
-<tr>
+ <section mat-icon-button (click)="sidenav.toggle()"  routerLink= "/summary" routerLinkActive="active">
+        <mat-icon>Summary</mat-icon>
+      </section>
+  
+  <section mat-icon-button (click)="sidenav.toggle()" routerLink= "/sendmessage" routerLinkActive="active">
+  Send Message/ Mail
+ </section>
+      <section mat-icon-button (click)="sidenav.toggle()" routerLink= "/updateinfo" routerLinkActive="active"> Update Data </section> 
+        <section mat-icon-button routerLink= "/todaysappointment" routerLinkActive="active">  Check Todays Appointments </section>
+<section mat-icon-button routerLink= "/settings" routerLinkActive="active">  Settings </section>
 
-<div>
-
-<nav> 
-<ul>
- <li> <a routerLink= "/summary" routerLinkActive="active"> View Summary </a> </li>
- 
-<li> <a routerLink= "/sendmessage" routerLinkActive="active"> Send Message/ Mail </a> </li>
- <li> <a routerLink= "/updateinfo" routerLinkActive="active"> Enter Client Data </a> </li>
- <li> <a routerLink= "/todaysappointment" routerLinkActive="active"> Check Todays Appointments </a> </li>
- <li> <a routerLink= "/settings" routerLinkActive="active"> Application Settings </a> </li>
- </ul>
-</nav>
-
-</div>
-
-</table>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-
-
-
-
-
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-
+  </mat-sidenav>
+  <mat-sidenav-content fxLayout="column">
+    <div class="main-content">
 <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
