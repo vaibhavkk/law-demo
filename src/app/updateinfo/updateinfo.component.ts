@@ -16,6 +16,7 @@ import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 export class UpdateinfoComponent implements OnInit {
  displayedColumns = ['position', 'firstName', 'lastName', 'email', 'courtno','action'];
    dataSource = new MatTableDataSource(ELEMENT_DATA);
+  displayList =  ELEMENT_DATA; 
   local_data : any ;
   action : string; 
  @ViewChild(MatTable,{static:true}) table: MatTable<any>; 
@@ -33,8 +34,9 @@ applyFilter(filterValue: string) {
     filterValue = filterValue.trim();
     filterValue = filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
-  }
-
+   //  this.displayList.filter = filterValue;
+	}
+  
  rowClicked(row: any): void {
       console.log(row);
     }
@@ -47,7 +49,20 @@ applyFilter(filterValue: string) {
 //	console.log(row);
 //	console.log(kind);
 }
+
+   editField:string; 
+updateList(id: number, property: string, event: any) {
+      const editField = event.target.textContent;
+      this.displayList[id][property] = editField;
+//	console.log(editField, id, property , "this will change");
+    }
+
+changeValue(id: number, property: string, event: any) {
+      this.editField = event.target.textContent;
+//	console.log("changed value", this.editField, id);
+    }
 }
+
 /*
  dialogRef.afterClosed().subscribe(result => {
 
@@ -90,6 +105,7 @@ addRowData(row_obj){
 
 
 
+
 export interface Element {
     position: number;
    firstName: string;
@@ -106,4 +122,3 @@ export interface Element {
     {position: 1, firstName: 'Martin', lastName: 'Kos', email: 'martin@gmail.c    om', courtno : 1, action: 'Update'},
     {position: 1, firstName: 'Tom', lastName: 'Paisa', email: 'tom@gmail.com',     courtno:5, action:'Update'}
   ];
-

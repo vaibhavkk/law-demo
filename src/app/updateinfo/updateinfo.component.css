@@ -1,4 +1,18 @@
-::ng-deep .gray {
-color : whilte ;
-background:#673AB7
+table,tr,td {
+border : 1px solid black;
+border-collapse : collapse;  
+ 
+}
+
+@media all and (min-width: 768px) {
+  tr  {
+    td {
+      vertical-align: middle !important;
+    }
+    span {
+      &:not([class]) {
+        padding: 1rem 1rem;
+      }
+    }
+  }
 }

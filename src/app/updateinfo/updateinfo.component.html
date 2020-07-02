@@ -1,8 +1,42 @@
 <p>Click on cell to update the data !</p>
 <br>
+<br>
+<!-- Editable table -->
+<div class="card">
+  <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Editable table</h3>
+  <div class="card-body">
+    <div id="table" class="table-editable">
+      <span class="table-add float-right mb-3 mr-2">
+        <a class="text-success">
+          <mdb-icon fas icon="plus" size="2x"></mdb-icon>
+        </a>
+      </span>
+      <input Input (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      
+
+      <table class="table table-bordered table-responsive-md table-striped text-center" datasource=displayList>
+        <tr>
+          <th class="text-center">No</th>
+          <th class="text-center">Name 1</th>
+          <th class="text-center">name 2</th>
+          <th class="text-center">E Mail</th>
+          <th class="text-center">Update</th>
+        </tr>
+<tr *ngFor= "let el of displayList let id=index"> <td> {{el.position}} </td>
+<td> <span (keyup)="changeValue(id,'firstName',$event)" (blur)="updateList(id,'firstName',$event)" contenteditable="true" > {{el.firstName}} </span> </td>
+<td> <span (keyup)="changeValue(id,'lastName',$event)" (blur)="updateList(id,'lastName',$event)" contenteditable="true" > {{el.lastName}} </span> </td>
+<td> <span (keyup)="changeValue(id,'email',$event)" (blur)="updateList(id,'email',$event)" contenteditable="true" > {{el.email}} </span> </td>
+<td> {{el.action}}</td>
+</tr> 
+
+      </table>
+    </div>
+  </div>
+</div>
+<!-- Editable table -->
 
 <!-- Tell this component about the datasource -->
-
+<!--
 <p> Add new data !! </p> <br>
 <p> Enter data to search </p> <mat-form-field>
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
@@ -41,10 +75,10 @@
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-<!-- updates option for whole table 
+<!--  some  -- 
 <mat-row *matRowDef="let row; columns: displayedColumns;" (click) = "OpenDialog('Update',row)" > Update </mat-row>
 -->
-
+<!--
 <mat-row *matRowDef="let row; columns: displayedColumns;" ></mat-row>
 
   </mat-table>
@@ -63,4 +97,5 @@
     </mat-form-field>
 
   <button mat-button (click)="OpenDialog('Add',{})" mat-flat-button >Add Row</button>
+-->
 
