@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
-
+import {DataTable} from "frappe-datatable"
 @Component({
   selector: 'app-todaysappointment',
   templateUrl: './todaysappointment.component.html',
@@ -10,9 +10,21 @@ export class TodaysappointmentComponent implements OnInit {
    displayedColumns = ['position', 'firstName', 'lastName', 'email', 'courtno'];
    dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-  constructor() { }
+/*
+   element = document.querySelector('.target');
+    datatable =  new DataTable( this.element, {
+      columns:['Name', 'Position','Department'], 
+      data :[ ['Nixon Data','Sys arch','Tech'], 
+             ['Garrent ', 'Accountant', 'general']]
+        } );
+*/
+
+  constructor() { 
+
+}
 
   ngOnInit(): void {
+//console.log(this.datatable.datamanager.getRows());
 
 
   }

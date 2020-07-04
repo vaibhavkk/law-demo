@@ -35,8 +35,17 @@ applyFilter(filterValue: string) {
     filterValue = filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
    //  this.displayList.filter = filterValue;
+	 newlist : string;
+	for (let e of this.displayList) {
+	if ( e['firstName'].trim().toLowerCase() == filterValue  ) {
+	console.log( e,  e['firstName'] ,  e['firstName'].trim().toLowerCase() == filterValue ,  " and ", filterValue ); 
+        // this value is found and is to be displayed in the table
+	newlist.join(e)
+	} 
+        }
+        this.OpenDialog("Searched", newlist); 
 	}
-  
+ 
  rowClicked(row: any): void {
       console.log(row);
     }

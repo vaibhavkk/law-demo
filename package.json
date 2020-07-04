@@ -21,7 +21,13 @@
     "@angular/platform-browser": "~10.0.0",
     "@angular/platform-browser-dynamic": "~10.0.0",
     "@angular/router": "~10.0.0",
+    "body-parser": "^1.19.0",
     "component": "^1.1.0",
+    "cors": "^2.8.5",
+    "emailjs": "^3.2.1",
+    "express": "^4.17.1",
+    "frappe-datatable": "^1.15.2",
+    "nodemailer": "^6.4.10",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"

@@ -14,7 +14,7 @@ import {  SendmessageComponent } from './sendmessage/sendmessage.component';
 import { UpdateinfoComponent } from './updateinfo/updateinfo.component';
 import { TodaysappointmentComponent } from './todaysappointment/todaysappointment.component';
 import { SettingsComponent } from './settings/settings.component'
-import {DialogBoxComponent} from './dialog-box/dialog-box.component'
+import {DialogBoxComponent} from './dialog-box/dialog-box.component';
 @NgModule({
   declarations: [
     AppComponent,

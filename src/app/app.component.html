@@ -1,20 +1,21 @@
 
+<mat-sidenav-container>
    <mat-toolbar color="primary" position="start" >
  <mat-toolbar-row>
-      <button mat-icon-button (click)="sidenav.toggle()" 
+      <button mat-icon-button 
 routerLink= "/summary" routerLinkActive="active">
         <mat-icon>Summary</mat-icon>
       </button>
-      <button mat-icon-button (click)="sidenav.toggle()" routerLink= "/sendmessage" routerLinkActive="active">
+      <button mat-icon-button  routerLink= "/sendmessage" routerLinkActive="active">
   Send Message/ Mail
  </button>
-      <button mat-icon-button (click)="sidenav.toggle()" routerLink= "/updateinfo" routerLinkActive="active"> Update Data </button> 
+      <button mat-icon-button routerLink= "/updateinfo" routerLinkActive="active"> Update Data </button> 
 
         <button mat-icon-button routerLink= "/todaysappointment" routerLinkActive="active">  Check Todays Appointments </button>
-<button mat-icon-button routerLink= "/settings" routerLinkActive="active">  Settings </button>
+<button mat-icon-button   routerLink= "/settings" routerLinkActive="active">  Settings </button>
 </mat-toolbar-row>
     </mat-toolbar>
-<mat-sidenav-container>
+<!--
 <mat-sidenav  #sidenav>
 
  <section mat-icon-button (click)="sidenav.toggle()"  routerLink= "/summary" routerLinkActive="active">
@@ -29,6 +30,7 @@ routerLink= "/summary" routerLinkActive="active">
 <section mat-icon-button routerLink= "/settings" routerLinkActive="active">  Settings </section>
 
   </mat-sidenav>
+-->
   <mat-sidenav-content fxLayout="column">
     <div class="main-content">
 <router-outlet></router-outlet>

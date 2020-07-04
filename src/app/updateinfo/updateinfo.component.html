@@ -11,10 +11,15 @@
           <mdb-icon fas icon="plus" size="2x"></mdb-icon>
         </a>
       </span>
-      <input Input (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-      
+<div class="example-header">
 
-      <table class="table table-bordered table-responsive-md table-striped text-center" datasource=displayList>
+
+    <input (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+
+
+</div> 
+ 
+      <table class="table table-bordered table-responsive-md table-striped text-center" datasource=displayList id="myTable">
         <tr>
           <th class="text-center">No</th>
           <th class="text-center">Name 1</th>
@@ -33,6 +38,34 @@
     </div>
   </div>
 </div>
+<script> 
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+
+</script>
+
+
+
 <!-- Editable table -->
 
 <!-- Tell this component about the datasource -->
