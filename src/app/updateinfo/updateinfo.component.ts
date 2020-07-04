@@ -18,7 +18,7 @@ export class UpdateinfoComponent implements OnInit {
    dataSource = new MatTableDataSource(ELEMENT_DATA);
   displayList =  ELEMENT_DATA; 
   local_data : any ;
-  action : string; 
+  action : string;
  @ViewChild(MatTable,{static:true}) table: MatTable<any>; 
   constructor( public dialog: MatDialog , 
      @Inject(MAT_DIALOG_DATA) public data: Element) {
@@ -35,15 +35,13 @@ applyFilter(filterValue: string) {
     filterValue = filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
    //  this.displayList.filter = filterValue;
-	 newlist : string;
 	for (let e of this.displayList) {
 	if ( e['firstName'].trim().toLowerCase() == filterValue  ) {
 	console.log( e,  e['firstName'] ,  e['firstName'].trim().toLowerCase() == filterValue ,  " and ", filterValue ); 
         // this value is found and is to be displayed in the table
-	newlist.join(e)
+        this.OpenDialog("Searched "+e['firstName'], e); 
 	} 
         }
-        this.OpenDialog("Searched", newlist); 
 	}
  
  rowClicked(row: any): void {
@@ -55,8 +53,7 @@ applyFilter(filterValue: string) {
         const dialogRef = this.dialog.open(DialogBoxComponent,{
 	width:'250px' , data:row
       });
-//	console.log(row);
-//	console.log(kind);
+	console.log(row , "inside opendialog");
 }
 
    editField:string; 

@@ -23,13 +23,13 @@ export class DialogBoxComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<DialogBoxComponent>,
  @Inject(MAT_DIALOG_DATA) public data: Element) {
-    console.log(data);
+    //console.log(data);
     this.local_data = {...data};
     this.action = this.local_data.action;
   }
 doAction(){
     this.dialogRef.close({event:this.action,data:this.local_data});
-    console.log(this.local_data);
+    console.log(this.local_data, "action");
 }
 
 closeDialog(){
